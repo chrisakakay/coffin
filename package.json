@@ -1,0 +1,21 @@
+{
+  "name": "coffin",
+  "version": "1.0.0",
+  "description": "0.0.1",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "npm run test -- --watch"
+  },
+  "author": "Krisztian Nagy",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^18.1.0",
+    "sandbox": "^0.8.6"
+  },
+  "jest": {
+    "modulePathIgnorePatterns": [
+      "<rootDir>/data/"
+    ]
+  }
+}
