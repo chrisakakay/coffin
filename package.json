@@ -1,7 +1,7 @@
 {
   "name": "coffin",
-  "version": "1.0.0",
-  "description": "0.0.1",
+  "version": "0.0.1",
+  "description": "Sandbox module for node",
   "main": "index.js",
   "scripts": {
     "test": "jest",

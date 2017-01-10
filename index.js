@@ -21,27 +21,31 @@ class Coffin {
     }
 
     run(code, cb) {
-        let fName = path.join(__dirname, 'data', new Date().getTime() + '.js');
+        if (!code) { cb({ error: 'SyntaxError: No code given to run.' }); return; }
 
-        runner.saveToFile(fName, code);
-
-        let child = spawn('node', [ch, fName]);
+        let result  = {};
+        let child   = spawn('node', [ch]);
 
         child.stdout.on('data', (data) => {
-            console.log(`stdout: ${data}`);
+            result = JSON.parse(data.toString('utf8'));
         });
 
         child.stderr.on('data', (data) => {
             console.log(`stderr: ${data}`);
         });
 
-        child.on('close', (code) => {
-            let result = JSON.parse(runner.readFromFile(fName + '-result.json'));
+        child.on('close', () => {
             cb(result);
         });
+
+        child.stdin.setEncoding('utf-8');
+        child.stdin.write(code);
+        child.stdin.end();
     }
 
     runSync(code) {
+        if (!code) { return { error: 'SyntaxError: No code given to run.' }; }
+
         return runner.runSync(code, this.options);
     }
 }
