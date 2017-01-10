@@ -30,10 +30,6 @@ class Coffin {
             result = JSON.parse(data.toString('utf8'));
         });
 
-        child.stderr.on('data', (data) => {
-            console.log(`stderr: ${data}`);
-        });
-
         child.on('close', () => {
             cb(result);
         });
