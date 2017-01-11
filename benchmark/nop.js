@@ -1,6 +1,6 @@
 'use strict'
 
-const Coffin = require('./index');
+const Coffin = require('../index');
 const Sandbox = require('sandbox');
 const code = `
 function nop() {}
