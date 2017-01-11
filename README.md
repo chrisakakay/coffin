@@ -24,7 +24,7 @@ With callback:
 const Coffin = require('coffinjs');
 
 let coffin = new Coffin();
-coffin.run('console.log("a"); return 1 + 1;', (result) {
+coffin.run('console.log("a"); return 1 + 1;', (result) => {
     // result -> { console: ["a"], returnValue: 2 }
 });
 ```
