@@ -76,6 +76,11 @@ describe('Coffin', () => {
             result: { result: undefined, console: [], returnValue: { a: 1, b: 2, c: 3 } }
         },
         {
+            name: 'should log and return data',
+            code: 'console.log("a"); return { a: 1, b: 2, c: 3 }',
+            result: { result: undefined, console: ["a"], returnValue: { a: 1, b: 2, c: 3 } }
+        },
+        {
             name: 'should not allow acces to process through constructor',
             code: `return new Function("return (this.constructor.constructor('return (this.process.mainModule.constructor._load)')())")()("util").inspect("hi")`,
             result: { error: "TypeError: Cannot read property 'mainModule' of undefined" }

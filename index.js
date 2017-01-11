@@ -3,7 +3,7 @@
 const runner    = require('./lib/runner');
 
 class Coffin {
-    constructor(opts, context) {
+    constructor(opts) {
         this.options = {
             timeout: 500
         }
