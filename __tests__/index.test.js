@@ -80,8 +80,6 @@ describe('Coffin', () => {
             code: `return new Function("return (this.constructor.constructor('return (this.process.mainModule.constructor._load)')())")()("util").inspect("hi")`,
             result: { error: "TypeError: Cannot read property 'mainModule' of undefined" }
         }
-
-
     ];
 
     beforeEach(() => {
