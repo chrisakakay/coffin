@@ -48,7 +48,7 @@ describe('Coffin', () => {
         {
             name: 'should execute basic js 1',
             code: 'return 1 + 1',
-            result: { result: undefined, console: [], returnValue: 2 }
+            result: { console: [], result: 2 }
         },
         {
             name: 'should execute basic js 2',
@@ -58,27 +58,27 @@ describe('Coffin', () => {
         {
             name: 'should execute function with return 1',
             code: 'function d(i) { return i * 2; }; return d(3)',
-            result: { result: undefined, console: [], returnValue: 6 }
+            result: { console: [], result: 6 }
         },
         {
             name: 'should execute function with return 2',
             code: 'return [1, 2, 3].map(val => val * 2)',
-            result: { result: undefined, console: [], returnValue: [2,4,6] }
+            result: { console: [], result: [2,4,6] }
         },
         {
             name: 'should execute function with return 3',
             code: 'function d(i) { return i * 2; }; result = d(3);',
-            result: { result: 6, console: [] }
+            result: { result: undefined, console: [] }
         },
         {
             name: 'should return objects',
             code: 'return { a: 1, b: 2, c: 3 }',
-            result: { result: undefined, console: [], returnValue: { a: 1, b: 2, c: 3 } }
+            result: { console: [], result: { a: 1, b: 2, c: 3 } }
         },
         {
             name: 'should log and return data',
             code: 'console.log("a"); return { a: 1, b: 2, c: 3 }',
-            result: { result: undefined, console: ["a"], returnValue: { a: 1, b: 2, c: 3 } }
+            result: { console: ["a"], result: { a: 1, b: 2, c: 3 } }
         },
         {
             name: 'should not allow acces to process through constructor',
