@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "Javascript sandbox module for node",
   "homepage": "https://github.com/chrisakakay/coffin",
+  "repository": "chrisakakay/coffin",
   "bugs": {
     "url": "https://github.com/chrisakakay/coffin/issues",
     "email": "chrisakakay@gmail.com"
