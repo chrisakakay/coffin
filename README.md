@@ -16,7 +16,7 @@ const Coffin = require('coffinjs');
 let coffin = new Coffin();
 let result = coffin.runSync('console.log("a"); return 1 + 1;');
 
-// result -> { console: ["a"], returnValue: 2 }
+// -> { console: ["a"], result: 2 }
 ```
 
 With callback:
@@ -25,7 +25,7 @@ const Coffin = require('coffinjs');
 
 let coffin = new Coffin();
 coffin.run('console.log("a"); return 1 + 1;', (result) => {
-    // result -> { console: ["a"], returnValue: 2 }
+    // -> { console: ["a"], result: 2 }
 });
 ```
 

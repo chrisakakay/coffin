@@ -1,12 +1,12 @@
-'use strict'
+'use strict';
 
-const runner    = require('./lib/runner');
+const runner = require('./lib/runner');
 
 class Coffin {
     constructor(opts) {
         this.options = {
-            timeout: 500
-        }
+            timeout: (opts && opts.timeout) || 500
+        };
     }
 
     setOptions(opts) {

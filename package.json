@@ -1,6 +1,6 @@
 {
   "name": "coffinjs",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Javascript sandbox module for node",
   "homepage": "https://github.com/chrisakakay/coffin",
   "repository": "chrisakakay/coffin",
@@ -10,13 +10,23 @@
   },
   "main": "index.js",
   "scripts": {
+    "lint": "eslint index.js lib",
     "test": "jest",
     "test:watch": "npm run test -- --watch",
-    "test:coverage": "npm run test -- --coverage"
+    "test:coverage": "npm run test -- --coverage",
+    "prepush": "npm run lint && npm run test"
   },
+  "keywords": [
+    "sandbox",
+    "node",
+    "js",
+    "untrusted",
+    "vm"
+  ],
   "author": "Krisztian Nagy <chrisakakay@gmail.com> (http://chrisakakay.github.io/)",
   "license": "MIT",
   "devDependencies": {
+    "eslint": "^3.13.1",
     "jest": "^18.1.0",
     "sandbox": "^0.8.6"
   },
@@ -25,10 +35,5 @@
   ],
   "directories": {
     "lib": "./lib"
-  },
-  "jest": {
-    "modulePathIgnorePatterns": [
-      "<rootDir>/data/"
-    ]
   }
 }
