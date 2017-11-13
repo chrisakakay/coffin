@@ -1,7 +1,7 @@
 Coffin
 =========
 
-A small and fast module providing sandboxed javasript execution for node
+A small and fast module providing sandboxed javascript execution for node
 
 ## Installation
 
